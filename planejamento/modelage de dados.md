@@ -15,10 +15,10 @@
 	id:INTEGER
 	nome:STRING
 	professor:PROFESSOR
-	aluno:ALUNO
+	alunos:List<ALUNO>
 	
 	
 ### Cardinalidades
 
 Professor 1 ------- 1..* Disciplina
-Aluno 1 ------- 1..* Disciplina
+Aluno 1..* ------- 1..* Disciplina

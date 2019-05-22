@@ -23,6 +23,13 @@ public class Professor extends BaseModel implements Serializable {
 	}
 	
 	public void addDisciplina(Disciplina disciplina) {
+		for(Disciplina d : this.disciplinas) {
+			if(d.equals(disciplina)){
+				System.err.println("Esse professor já ministra nessa disciplina");
+				return;
+			}
+		}
+		
 		disciplina.setProfessor(this);
 		this.disciplinas.add(disciplina);
 	}
@@ -31,11 +38,6 @@ public class Professor extends BaseModel implements Serializable {
 	}
 	public List<Disciplina> listDisciplinas() {
 		return this.disciplinas;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		return ((Professor) obj).getId() == this.getId();
 	}
 	
 	@Override

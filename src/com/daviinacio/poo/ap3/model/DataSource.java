@@ -8,18 +8,31 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
 
 import com.daviinacio.poo.ap3.Program;
 
 public class DataSource <E extends BaseModel> {
 	private File storage;
 	private List<E> items;
+	private List<DataSourceObserver<E>> dataSourceObservers;
 	
 	public DataSource(File dataSourceFile) {
 		this.storage = dataSourceFile;
 		this.items = new ArrayList<>();
-		read();
+		this.dataSourceObservers = new ArrayList<>();
+	}
+	
+	public DataSource<E> init() {
+		// Read objects from file
+		this.read();
+		
+		// Call listeners
+		this.throwChanged();
+		
+		return this;
 	}
 	
 	private void read() {
@@ -39,7 +52,7 @@ public class DataSource <E extends BaseModel> {
 				this.items.add((E) obj);
 				
 				// Debug
-				System.out.println(obj);
+				//System.out.println(obj);
 			}
 			
 		}
@@ -71,7 +84,7 @@ public class DataSource <E extends BaseModel> {
 	}
 
 	public void insert(E e) {
-		this.read();
+		//this.throwInserted(e);
 		
 		// find a  available id
 		for (int i = 1; true; i++) {
@@ -82,18 +95,29 @@ public class DataSource <E extends BaseModel> {
 		}
 		
 		this.items.add(e);
+		
+		this.throwChanged();
+		
 		this.write();
 	}
 
 	public void update(E e) {
-		this.read();
+		//this.throwUpdated(e);
+		
 		this.items.set(this.items.indexOf(this.selectById(e.getId())), e);
+		
+		this.throwChanged();
+		
 		this.write();
 	}
 
 	public void delete(E e) {
-		this.read();
+		//this.throwDeleted(e);
+		
 		this.items.remove(e);
+		
+		this.throwChanged();
+		
 		this.write();
 	}
 	
@@ -111,13 +135,68 @@ public class DataSource <E extends BaseModel> {
 	public List<E> selectByNome(String nome) {
 		List<E> result = new ArrayList<>();
 		for(E e : this.items) {
-			if(e.getNome().contains(nome))
+			if(e.getNome().toLowerCase().contains(nome.toLowerCase()))
 				result.add(e);
 		}
 		return result;
+	}
+	
+	public List<E> list(){
+		return this.items;
 	}
 
 	public int count() {
 		return this.items.size();
 	}
+	
+	// Listeners
+	public synchronized void addDataSourceObserver(DataSourceObserver<E> listener) {
+		if(!this.dataSourceObservers.contains(listener))
+			this.dataSourceObservers.add(listener);
+	}
+	
+	public synchronized void throwChanged() {
+		for(DataSourceObserver<E> observer : this.dataSourceObservers)
+			observer.changed(this);
+	}
+	
+	/*public synchronized void addDaoListener(_____DaoListener<E> listener) {
+		if(!this.daoListeners.contains(listener))
+			this.daoListeners.add(listener);
+	}
+	
+	private synchronized void throwInserted(E e) {
+		for(_____DaoListener<E> listener : this.daoListeners) {
+			listener.inserted(new _____DaoEvent<E>(this, e));
+		}
+	}
+	
+	private synchronized void throwUpdated(E e) {
+		for(_____DaoListener<E> listener : this.daoListeners)
+			listener.updated(new _____DaoEvent<E>(this, e));
+	}
+	
+	private synchronized void throwDeleted(E e) {
+		for(_____DaoListener<E> listener : this.daoListeners)
+			listener.deleted(new _____DaoEvent<E>(this, e));
+	}*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

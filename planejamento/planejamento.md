@@ -1,18 +1,18 @@
 
 ### View
-- [ ] CadastrarProfessor
-- [ ] CadastrarAluno
-- [ ] CadastrarDisciplina
+- [ ] CadastroProfessor
+- [ ] CadastroAluno
+- [ ] CadastroDisciplina
 - [ ] ExibirProfessores			- Com pesquisa
-- [ ] ExibirAlunos				- Com pesquisa
+- [x] ExibirAlunos				- Com pesquisa
 - [ ] ExibirDisciplinas
 
 ### Controller
-- [ ] CadastrarProfessorController
-- [ ] CadastrarAlunoController
-- [ ] CadastrarDisciplinaController
+- [ ] CadastroProfessorController
+- [x] CadastrorAlunoController
+- [ ] CadastroDisciplinaController
 - [ ] ExibirProfessoresController			- Com pesquisa
-- [ ] ExibirAlunosController				- Com pesquisa
+- [x] ExibirAlunosController				- Com pesquisa
 - [ ] ExibirDisciplinasController
 
 ### Model
@@ -25,7 +25,7 @@
 - [x] Aluno
 - [x] Disciplina
 
-Os dados serão armazenados em arquivos atravéz de ObjectInputStream e ObjectOutputStream em aquivos *.osf (Object Stream File)
+### Os dados serão armazenados em arquivos atravéz de ObjectInputStream e ObjectOutputStream em aquivos *.osf (Object Stream File)
 
 - Para facilitar a implementação dos DAOs, eu implementei uma classe chamada DataSource.
 - Essa classe consegue manipular (inserir, modificar, ler e deletar) objetos (que extendão Serializable e BaseModel).

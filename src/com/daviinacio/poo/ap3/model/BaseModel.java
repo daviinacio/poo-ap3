@@ -1,6 +1,7 @@
 package com.daviinacio.poo.ap3.model;
 
 import java.io.Serializable;
+import java.util.Observable;
 
 abstract class BaseModel implements Serializable {
 	protected int id;
@@ -17,5 +18,10 @@ abstract class BaseModel implements Serializable {
 	}
 	public void setName(String nome) {
 		this.nome = nome;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return ((BaseModel) obj).getId() == this.getId();
 	}
 }

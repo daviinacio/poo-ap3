@@ -23,19 +23,22 @@ public class Aluno extends BaseModel implements Serializable {
 	}
 	
 	public void addDisciplina(Disciplina disciplina) {
-		disciplina.setAluno(this);
+		for(Disciplina d : this.disciplinas) {
+			if(true){
+				System.err.println("Esse aluno já cursa nessa disciplina");
+				return;
+			}
+		}
+		
+
 		this.disciplinas.add(disciplina);
+		disciplina.addAluno(this);
 	}
 	public void removeDisciplina(Disciplina displina) {
 		this.disciplinas.remove(displina);
 	}
 	public List<Disciplina> listDisciplinas() {
 		return this.disciplinas;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		return ((Aluno) obj).getId() == this.getId();
 	}
 	
 	@Override
