@@ -51,7 +51,7 @@ Deve-se implementar
 - [x] AlunoStorage.osf
 - [x] DisciplinaStorage.osf
 
-[Modelagem de dados](/planejamento/modelage%20de%20dados.md)
+## [Modelagem de dados](/planejamento/modelage%20de%20dados.md)
 
 ### Relações
 
