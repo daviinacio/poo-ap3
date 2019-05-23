@@ -162,12 +162,12 @@ public class ExibirDisciplinas extends JFrame implements DataSourceObserver<Disc
 	public void setVisible(boolean b) {
 		super.setVisible(b);
 		if(b) {
-			if(this.controller.hasOnItemSelectListener() || true) {
+			if(this.controller.hasOnItemSelectListener()) {
 				btnFechar.setText("Selec.");
 				btnFechar.setActionCommand("select");
 			}
 			else {
-				btnFechar = new JButton("Fechar");
+				btnFechar.setText("Fechar");
 				btnFechar.setActionCommand("close");
 			}
 			
