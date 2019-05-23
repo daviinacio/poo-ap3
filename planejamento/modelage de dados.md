@@ -2,23 +2,23 @@
 
 - [x] Professor
 ```
-	id:INTEGER
-	nome:STRING
-	diciplina:List<DISCIPLINA>
+id:INTEGER
+nome:STRING
+diciplina:List<DISCIPLINA>
 ```
 	
 - [x] Aluno
 ```
-	id:INTEGER
-	nome:STRING
-	diciplina:List<DISCIPLINA> 
+id:INTEGER
+nome:STRING
+diciplina:List<DISCIPLINA> 
 ```
 	
 	
 - [x] Disciplina
 ```
-	id:INTEGER
-	nome:STRING
+id:INTEGER
+nome:STRING
 ```
 	
 	
