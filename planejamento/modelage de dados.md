@@ -14,8 +14,6 @@
 - [x] Disciplina
 	id:INTEGER
 	nome:STRING
-	professor:PROFESSOR
-	alunos:List<ALUNO>
 	
 	
 ### Cardinalidades
