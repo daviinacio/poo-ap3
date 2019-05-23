@@ -30,7 +30,6 @@ public class Professor extends BaseModel implements Serializable {
 			}
 		}
 		
-		disciplina.setProfessor(this);
 		this.disciplinas.add(disciplina);
 	}
 	public void removeDisciplina(Disciplina displina) {

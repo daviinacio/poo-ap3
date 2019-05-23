@@ -23,16 +23,12 @@ public class Aluno extends BaseModel implements Serializable {
 	}
 	
 	public void addDisciplina(Disciplina disciplina) {
-		for(Disciplina d : this.disciplinas) {
-			if(true){
-				System.err.println("Esse aluno já cursa nessa disciplina");
-				return;
-			}
+		if(this.disciplinas.contains(disciplina)){
+			System.err.println("Esse aluno já cursa nessa disciplina");
+			return;
 		}
-		
 
 		this.disciplinas.add(disciplina);
-		disciplina.addAluno(this);
 	}
 	public void removeDisciplina(Disciplina displina) {
 		this.disciplinas.remove(displina);

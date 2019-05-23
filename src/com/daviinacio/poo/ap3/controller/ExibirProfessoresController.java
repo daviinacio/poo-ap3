@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JButton;
+import javax.swing.SwingUtilities;
+
 import com.daviinacio.poo.ap3.Program;
 import com.daviinacio.poo.ap3.model.AlunoDAO;
 import com.daviinacio.poo.ap3.model.ProfessorDAO;
@@ -27,12 +30,12 @@ public class ExibirProfessoresController implements ActionListener, MouseListene
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("search")) {
 			model.throwChanged();
-			//((ExibirAlunos) SwingUtilities.getRoot((JButton)e.getSource())).changed(model);
+			//((ExibirProfessores) SwingUtilities.getRoot((JButton)e.getSource())).changed(model);
 		}
 		else
 		if(e.getActionCommand().equals("new")) {
 			System.out.println("Novo professor");
-			//Program.cadastroAluno.showAsNewModel();
+			Program.cadastroProfessor.showAsNewModel();
 		}
 		else
 		if(e.getActionCommand().equals("close")) {
@@ -44,7 +47,7 @@ public class ExibirProfessoresController implements ActionListener, MouseListene
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("Editar professor");
-		//Program.cadastroAluno.showAsEditor(model.selectById(view.getSelectRowId()));
+		Program.cadastroProfessor.showAsEditor(model.selectById(view.getSelectRowId()));
 	}
 
 	@Override

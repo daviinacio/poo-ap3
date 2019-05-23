@@ -11,8 +11,6 @@ public class DisciplinaDAO extends DataSource<Disciplina>{
 	
 	@Override
 	public void delete(Disciplina e) {
-		super.delete(e);
-		
 		// Remove this 'Disciplina' from others DataSets
 		DataSource<Professor> pdao = Program.professores;
 		for(Professor p : pdao.list()) {
@@ -25,5 +23,7 @@ public class DisciplinaDAO extends DataSource<Disciplina>{
 			a.removeDisciplina(e);
 			adao.update(a);
 		}
+		
+		super.delete(e);
 	}
 }

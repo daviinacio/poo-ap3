@@ -15,7 +15,6 @@ import javax.swing.SwingUtilities;
 import com.daviinacio.poo.ap3.Program;
 import com.daviinacio.poo.ap3.model.Aluno;
 import com.daviinacio.poo.ap3.model.AlunoDAO;
-import com.daviinacio.poo.ap3.model._____DaoEvent;
 import com.daviinacio.poo.ap3.view.CadastroAluno;
 import com.daviinacio.poo.ap3.view.ExibirAlunos;
 

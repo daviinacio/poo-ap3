@@ -16,16 +16,4 @@ public class AlunoDAO extends DataSource<Aluno> {
 	public AlunoDAO() {
 		super(new File(Program.dataStorageFolderPath, "AlunoStorage.osf"));
 	}
-	
-	@Override
-	public void delete(Aluno e) {
-		super.delete(e);
-		
-		// Remove this 'Aluno' from others DataSets
-		DataSource<Disciplina> ddao = Program.disciplinas;
-		for(Disciplina d : ddao.list()) {
-			d.removeAluno(e);
-			ddao.update(d);
-		}
-	}
 }

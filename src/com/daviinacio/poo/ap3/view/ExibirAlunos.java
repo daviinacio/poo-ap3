@@ -23,8 +23,6 @@ import javax.swing.table.TableColumnModel;
 import com.daviinacio.poo.ap3.controller.ExibirAlunosController;
 import com.daviinacio.poo.ap3.model.Aluno;
 import com.daviinacio.poo.ap3.model.AlunoDAO;
-import com.daviinacio.poo.ap3.model._____DaoEvent;
-import com.daviinacio.poo.ap3.model._____DaoListener;
 import com.daviinacio.poo.ap3.model.DataSource;
 import com.daviinacio.poo.ap3.model.DataSourceObserver;
 
@@ -80,7 +78,6 @@ public class ExibirAlunos extends JFrame implements DataSourceObserver<Aluno> {
 	private void initialize() {
 		setResizable(false);
 		setTitle("Lista de alunos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 507, 365);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.DARK_GRAY);

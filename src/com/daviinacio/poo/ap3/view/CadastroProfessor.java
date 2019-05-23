@@ -1,46 +1,33 @@
 package com.daviinacio.poo.ap3.view;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import com.daviinacio.poo.ap3.controller.CadastroAlunoController;
-import com.daviinacio.poo.ap3.model.Aluno;
-import com.daviinacio.poo.ap3.model.Disciplina;
-
-import javafx.beans.Observable;
-
-import java.awt.Panel;
-import java.awt.Label;
-import java.awt.TextField;
-import java.awt.ScrollPane;
-import java.awt.FlowLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JSplitPane;
-import java.awt.Font;
-import java.awt.Button;
 import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JList;
-import javax.swing.border.MatteBorder;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Window.Type;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import java.awt.event.ActionEvent;
-import javax.swing.border.LineBorder;
-import java.awt.Component;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import java.awt.Window.Type;
-import java.awt.Dialog.ModalExclusionType;
-import javax.swing.JScrollBar;
 
-public class CadastroAluno extends JFrame {
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+
+import com.daviinacio.poo.ap3.controller.CadastroProfessorController;
+import com.daviinacio.poo.ap3.model.Disciplina;
+import com.daviinacio.poo.ap3.model.Professor;
+
+public class CadastroProfessor extends JFrame {
 	// Controller
-	private CadastroAlunoController controller;
+	private CadastroProfessorController controller;
 
 	// Layout
 	private JPanel contentPane;
@@ -58,7 +45,7 @@ public class CadastroAluno extends JFrame {
 	private Font fontEdit = new Font("Tahoma", Font.PLAIN, 20);
 	private Font font = new Font("Dialog", Font.BOLD, 15);
 	
-	public CadastroAluno(CadastroAlunoController controller) {
+	public CadastroProfessor(CadastroProfessorController controller) {
 		this.controller = controller;
 		this.controller.setView(this);
 		
@@ -69,7 +56,7 @@ public class CadastroAluno extends JFrame {
 	private void initialize() {
 		this.setResizable(false);
 		setType(Type.UTILITY);
-		setTitle("Cadastro aluno");
+		setTitle("Cadastro professor");
 		setBounds(100, 100, 308, 350);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -96,7 +83,6 @@ public class CadastroAluno extends JFrame {
 		lblDisciplinas.setBounds(10, 71, 89, 14);
 		panelEdit.add(lblDisciplinas);
 		lblDisciplinas.setFont(font);
-		
 		
 		pnlDisciplinas = new JPanel();
 		pnlDisciplinas.setBounds(10, 92, 283, 155);
@@ -158,8 +144,8 @@ public class CadastroAluno extends JFrame {
 			row.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					CadastroAluno.this.controller.setSelectedDisciplina(d);
-					CadastroAluno.this.btnRemoveDisiciplina.setVisible(true);
+					CadastroProfessor.this.controller.setSelectedDisciplina(d);
+					CadastroProfessor.this.btnRemoveDisiciplina.setVisible(true);
 				};
 			});
 			
@@ -176,11 +162,9 @@ public class CadastroAluno extends JFrame {
 	
 	// Visibility	
 	public void showAsNewModel() {
-		super.setVisible(false);
-
-		this.controller.setTargetModel(new Aluno());
+		this.controller.setTargetModel(new Professor());
 		this.txtNome.setText("");
-
+		
 		this.btnRemoveDisiciplina.setVisible(false);
 		this.btnApagar.setVisible(false);
 		this.btnSalvar.setText("Adicionar");
@@ -191,9 +175,7 @@ public class CadastroAluno extends JFrame {
 		super.setVisible(true);
 	}
 	
-	public void showAsEditor(Aluno model) {
-		super.setVisible(false);
-		
+	public void showAsEditor(Professor model) {
 		this.controller.setTargetModel(model);
 		this.txtNome.setText(model.getNome());
 		
@@ -207,18 +189,11 @@ public class CadastroAluno extends JFrame {
 		
 		super.setVisible(true);
 		
+		
 		System.out.println(model);
 	}
 	
 	@Deprecated
 	@Override
-	public void setVisible(boolean b) { super.setVisible(b); }
+	public void setVisible(boolean arg0) { super.setVisible(arg0); }
 }
-
-
-
-
-
-
-
-

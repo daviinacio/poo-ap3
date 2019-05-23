@@ -60,8 +60,7 @@ public class ExibirProfessores extends JFrame implements DataSourceObserver<Prof
 		
 		private void initialize() {
 			setResizable(false);
-			setTitle("Lista de alunos");
-			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setTitle("Lista de professor");
 			setBounds(100, 100, 507, 365);
 			contentPane = new JPanel();
 			contentPane.setBackground(Color.DARK_GRAY);

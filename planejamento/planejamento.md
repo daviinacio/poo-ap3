@@ -1,19 +1,19 @@
 
 ### View
-- [ ] CadastroProfessor
-- [ ] CadastroAluno
-- [ ] CadastroDisciplina
-- [ ] ExibirProfessores			- Com pesquisa
+- [x] CadastroProfessor
+- [x] CadastroAluno
+- [x] CadastroDisciplina
+- [x] ExibirProfessores			- Com pesquisa
 - [x] ExibirAlunos				- Com pesquisa
-- [ ] ExibirDisciplinas
+- [x] ExibirDisciplinas
 
 ### Controller
-- [ ] CadastroProfessorController
+- [x] CadastroProfessorController
 - [x] CadastrorAlunoController
-- [ ] CadastroDisciplinaController
-- [ ] ExibirProfessoresController			- Com pesquisa
+- [x] CadastroDisciplinaController
+- [x] ExibirProfessoresController			- Com pesquisa
 - [x] ExibirAlunosController				- Com pesquisa
-- [ ] ExibirDisciplinasController
+- [x] ExibirDisciplinasController
 
 ### Model
 - [x] DataSource
