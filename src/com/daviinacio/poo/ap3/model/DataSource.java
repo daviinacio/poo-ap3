@@ -159,44 +159,4 @@ public class DataSource <E extends BaseModel> {
 		for(DataSourceObserver<E> observer : this.dataSourceObservers)
 			observer.changed(this);
 	}
-	
-	/*public synchronized void addDaoListener(_____DaoListener<E> listener) {
-		if(!this.daoListeners.contains(listener))
-			this.daoListeners.add(listener);
-	}
-	
-	private synchronized void throwInserted(E e) {
-		for(_____DaoListener<E> listener : this.daoListeners) {
-			listener.inserted(new _____DaoEvent<E>(this, e));
-		}
-	}
-	
-	private synchronized void throwUpdated(E e) {
-		for(_____DaoListener<E> listener : this.daoListeners)
-			listener.updated(new _____DaoEvent<E>(this, e));
-	}
-	
-	private synchronized void throwDeleted(E e) {
-		for(_____DaoListener<E> listener : this.daoListeners)
-			listener.deleted(new _____DaoEvent<E>(this, e));
-	}*/
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -22,3 +22,4 @@ public class Disciplina extends BaseModel implements Serializable {
 				super.toString(), this.id, this.nome);
 	}
 }
+

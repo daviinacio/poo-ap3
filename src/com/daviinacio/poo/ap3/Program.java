@@ -97,19 +97,5 @@ public class Program {
 		alunos.init();
 		professores.init();
 		disciplinas.init();
-		
-		
-		/*try {
-			for(javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				// Nimbus, Windows, Metal
-				if("Windows".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-				}
-					
-			}
-		}
-		catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-			// TODO: handle exception
-		}*/
 	}
 }
