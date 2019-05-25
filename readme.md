@@ -1,6 +1,21 @@
 # Trabalho (AP3) de Programação Orientada a Objetos
 ## Aluno: Davi Inácio
 
+## Prints
+|Main View|
+|:-------:|
+|![Main View](/prints/Win_MainView.png)|
+
+|Exibir Alunos|Exibir Professores|Exibir Disciplinas|
+|:-----------:|:----------------:|:----------------:|
+|![Exibir Alunos](/prints/Win_ExibirAlunos.png)|![Exibir Professores](/prints/Win_ExibirProfessores.png)|![Exibir Disciplinas](/prints/Win_ExibirDisciplinas.png)|
+
+|Cadastro Alunos|Cadastro Professores|Cadastro Disciplinas|
+|:-----------:|:----------------:|:----------------:|
+|![Cadastro Aluno](/prints/Win_CadastroAluno.png)|![Cadastro Professor](/prints/Win_CadastroProfessor.png)|![Cadastro Disciplina](/prints/Win_CadastroDisciplina.png)|
+
+
+
 ## [Orientações da Atividade](/planejamento/orientações.md)
 
 Suponha que você foi contratado por uma Escola para informatizar o seu sistema de controle acadêmico que seja capaz de:
